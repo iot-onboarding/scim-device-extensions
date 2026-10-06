@@ -1,0 +1,18 @@
+{
+  "schemas": [
+    "urn:ietf:params:scim:schemas:core:2.0:Device",
+    "urn:ietf:params:scim:schemas:extension:zigbee:2.0:Device",
+    "urn:ietf:params:scim:schemas:extension:zigbeeLinkKey:2.0:Device"
+  ],
+  "displayName": "Example Zigbee link-key device",
+  "active": true,
+  "urn:ietf:params:scim:schemas:extension:zigbee:2.0:Device": {
+    "versionSupport": [
+      "3.0"
+    ],
+    "deviceEui64Address": "02:00:00:00:00:00:00:02"
+  },
+  "urn:ietf:params:scim:schemas:extension:zigbeeLinkKey:2.0:Device": {
+    "linkKey": "+oCByqpB1a3ptWWHmSaLiA=="
+  }
+}

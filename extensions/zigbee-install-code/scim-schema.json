@@ -1,0 +1,25 @@
+{
+  "schemas": [
+    "urn:ietf:params:scim:schemas:core:2.0:Schema"
+  ],
+  "id": "urn:ietf:params:scim:schemas:extension:zigbeeInstallCode:2.0:Device",
+  "name": "zigbeeInstallCodeExtension",
+  "description": "Device extension schema for provisioning a Zigbee device with an installation code.",
+  "attributes": [
+    {
+      "name": "installCode",
+      "type": "binary",
+      "description": "The Zigbee installation code, including its 16-bit CRC in least-significant-byte-first order. The value is Base64 encoded in the SCIM JSON representation. Valid decoded lengths are 8, 10, 14, or 18 octets, comprising a 6-, 8-, 12-, or 16-octet installation code followed by a 2-octet CRC. Zigbee 3.0 uses the 18-octet form.",
+      "multiValued": false,
+      "required": true,
+      "caseExact": true,
+      "mutability": "writeOnly",
+      "returned": "never",
+      "uniqueness": "none"
+    }
+  ],
+  "meta": {
+    "resourceType": "Schema",
+    "location": "/v2/Schemas/urn:ietf:params:scim:schemas:extension:zigbeeInstallCode:2.0:Device"
+  }
+}
