@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Repository authoring profile for SCIM Device extension Schema resources",
+  "description": "Independently authored from RFC 7643 sections 2 and 7; explicit metadata and Device extension identifiers are repository conventions.",
+  "type": "object",
+  "required": ["schemas", "id", "name", "description", "attributes"],
+  "additionalProperties": false,
+  "properties": {
+    "schemas": {
+      "const": ["urn:ietf:params:scim:schemas:core:2.0:Schema"]
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^urn:ietf:params:scim:schemas:extension:[A-Za-z0-9][A-Za-z0-9._~-]*:2\\.0:Device$"
+    },
+    "name": {"$ref": "#/$defs/nonemptyString"},
+    "description": {"$ref": "#/$defs/nonemptyString"},
+    "externalId": {"type": "string"},
+    "attributes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/attribute"}
+    },
+    "meta": {
+      "type": "object",
+      "required": ["resourceType"],
+      "additionalProperties": false,
+      "properties": {
+        "resourceType": {"const": "Schema"},
+        "location": {"$ref": "#/$defs/nonemptyString"},
+        "created": {"type": "string", "format": "date-time"},
+        "lastModified": {"type": "string", "format": "date-time"},
+        "version": {"type": "string"}
+      }
+    }
+  },
+  "$defs": {
+    "nonemptyString": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "stringArray": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/nonemptyString"}
+    },
+    "attribute": {
+      "type": "object",
+      "required": ["name", "type", "multiValued", "description", "required", "caseExact", "mutability", "returned", "uniqueness"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^(?:[A-Za-z][A-Za-z0-9$_-]*|\\$[rR][eE][fF])$"
+        },
+        "type": {
+          "enum": ["string", "boolean", "decimal", "integer", "dateTime", "binary", "reference", "complex"]
+        },
+        "multiValued": {"type": "boolean"},
+        "description": {"$ref": "#/$defs/nonemptyString"},
+        "required": {"type": "boolean"},
+        "caseExact": {"type": "boolean"},
+        "mutability": {"enum": ["readOnly", "readWrite", "immutable", "writeOnly"]},
+        "returned": {"enum": ["always", "never", "default", "request"]},
+        "uniqueness": {"enum": ["none", "server", "global"]},
+        "canonicalValues": {"$ref": "#/$defs/stringArray"},
+        "referenceTypes": {"$ref": "#/$defs/stringArray"},
+        "subAttributes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "allOf": [
+              {"$ref": "#/$defs/attribute"},
+              {"properties": {"type": {"not": {"const": "complex"}}}}
+            ]
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"type": {"const": "complex"}}, "required": ["type"]},
+          "then": {"required": ["subAttributes"]},
+          "else": {"not": {"required": ["subAttributes"]}}
+        },
+        {
+          "if": {"properties": {"type": {"const": "reference"}}, "required": ["type"]},
+          "then": {"required": ["referenceTypes"]},
+          "else": {"not": {"required": ["referenceTypes"]}}
+        }
+      ]
+    }
+  }
+}

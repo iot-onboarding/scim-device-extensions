@@ -1,0 +1,24 @@
+{
+  "schemas": ["urn:ietf:params:scim:schemas:core:2.0:Schema"],
+  "id": "urn:ietf:params:scim:schemas:extension:exampleCredential:2.0:Device",
+  "name": "exampleCredentialDeviceExtension",
+  "description": "Illustrative unregistered Device credential extension; replace when proposing an extension.",
+  "attributes": [
+    {
+      "name": "exampleCredential",
+      "type": "binary",
+      "multiValued": false,
+      "description": "An opaque synthetic credential encoded as Base64; this template defines no production mechanism.",
+      "required": true,
+      "caseExact": true,
+      "mutability": "writeOnly",
+      "returned": "never",
+      "uniqueness": "none"
+    }
+  ],
+  "meta": {
+    "resourceType": "Schema",
+    "location": "/v2/Schemas/urn:ietf:params:scim:schemas:extension:exampleCredential:2.0:Device"
+  }
+}
+

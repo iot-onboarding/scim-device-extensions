@@ -1,0 +1,12 @@
+{
+  "schemas": [
+    "urn:ietf:params:scim:schemas:core:2.0:Device",
+    "urn:ietf:params:scim:schemas:extension:exampleCredential:2.0:Device"
+  ],
+  "displayName": "Example device",
+  "active": true,
+  "urn:ietf:params:scim:schemas:extension:exampleCredential:2.0:Device": {
+    "exampleCredential": "AAECAwQFBgcICQoLDA0ODw=="
+  }
+}
+

@@ -1,0 +1,16 @@
+{
+  "schemas": [
+    "urn:ietf:params:scim:schemas:core:2.0:Device",
+    "urn:ietf:params:scim:schemas:extension:exampleCredential:2.0:Device"
+  ],
+  "id": "bd6192bc-37c8-4c7e-a19e-e33ec55f663a",
+  "displayName": "Example device",
+  "active": true,
+  "meta": {
+    "resourceType": "Device",
+    "created": "2026-10-06T00:00:00Z",
+    "lastModified": "2026-10-06T00:00:00Z",
+    "location": "https://example.com/v2/Devices/bd6192bc-37c8-4c7e-a19e-e33ec55f663a"
+  }
+}
+
