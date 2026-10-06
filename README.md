@@ -35,6 +35,8 @@ This index lists new registration proposals hosted in this repository.
 
 | Extension specification | Schema URI | Status |
 | --- | --- | --- |
+| [Zigbee Install Code](extensions/zigbee-install-code/README.md) | `urn:ietf:params:scim:schemas:extension:zigbeeInstallCode:2.0:Device` | `proposed` |
+| [Zigbee Link Key](extensions/zigbee-link-key/README.md) | `urn:ietf:params:scim:schemas:extension:zigbeeLinkKey:2.0:Device` | `proposed` |
 
 - `proposed`: awaiting IANA registration, including proposals reviewed and merged
   while IANA registration is pending.

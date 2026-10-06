@@ -1,0 +1,23 @@
+{
+  "schemas": [
+    "urn:ietf:params:scim:schemas:core:2.0:Device",
+    "urn:ietf:params:scim:schemas:extension:zigbee:2.0:Device",
+    "urn:ietf:params:scim:schemas:extension:zigbeeLinkKey:2.0:Device"
+  ],
+  "displayName": "Example Zigbee link-key device",
+  "active": true,
+  "urn:ietf:params:scim:schemas:extension:zigbee:2.0:Device": {
+    "versionSupport": [
+      "3.0"
+    ],
+    "deviceEui64Address": "02:00:00:00:00:00:00:02"
+  },
+  "urn:ietf:params:scim:schemas:extension:zigbeeLinkKey:2.0:Device": {},
+  "id": "f26b293f-af26-4a29-8a9b-357f80b191e8",
+  "meta": {
+    "resourceType": "Device",
+    "created": "2026-10-06T00:00:00Z",
+    "lastModified": "2026-10-06T00:00:00Z",
+    "location": "https://example.com/v2/Devices/f26b293f-af26-4a29-8a9b-357f80b191e8"
+  }
+}

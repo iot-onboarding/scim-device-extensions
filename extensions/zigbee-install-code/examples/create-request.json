@@ -1,0 +1,18 @@
+{
+  "schemas": [
+    "urn:ietf:params:scim:schemas:core:2.0:Device",
+    "urn:ietf:params:scim:schemas:extension:zigbee:2.0:Device",
+    "urn:ietf:params:scim:schemas:extension:zigbeeInstallCode:2.0:Device"
+  ],
+  "displayName": "Example Zigbee installation-code device",
+  "active": true,
+  "urn:ietf:params:scim:schemas:extension:zigbee:2.0:Device": {
+    "versionSupport": [
+      "3.0"
+    ],
+    "deviceEui64Address": "02:00:00:00:00:00:00:01"
+  },
+  "urn:ietf:params:scim:schemas:extension:zigbeeInstallCode:2.0:Device": {
+    "installCode": "g/7TQHqTlyOlxjmyaRbVBcO1"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schemas": [
+    "urn:ietf:params:scim:schemas:core:2.0:Schema"
+  ],
+  "id": "urn:ietf:params:scim:schemas:extension:zigbeeLinkKey:2.0:Device",
+  "name": "zigbeeLinkKeyExtension",
+  "description": "Device extension schema for provisioning a Zigbee device with a precomputed link key.",
+  "attributes": [
+    {
+      "name": "linkKey",
+      "type": "binary",
+      "description": "A 128-bit (16-octet) Zigbee link key. The value is Base64 encoded.",
+      "multiValued": false,
+      "required": true,
+      "caseExact": true,
+      "mutability": "writeOnly",
+      "returned": "never",
+      "uniqueness": "none"
+    }
+  ],
+  "meta": {
+    "resourceType": "Schema",
+    "location": "/v2/Schemas/urn:ietf:params:scim:schemas:extension:zigbeeLinkKey:2.0:Device"
+  }
+}
